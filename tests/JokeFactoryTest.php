@@ -2,25 +2,23 @@
 /**
  * Created by Omatech
  * User: aroca@omatech.com
- * Date: 22/02/19 17:00
+ * Date: 22/02/19 17:00.
  */
 
 namespace AdriaRoca\ChuckNorrisJokes\Tests;
 
-
-use AdriaRoca\ChuckNorrisJokes\JokeFactory;
 use PHPUnit\Framework\TestCase;
+use AdriaRoca\ChuckNorrisJokes\JokeFactory;
 
 class JokeFactoryTest extends TestCase
 {
-
     /** @test */
     public function it_returns_a_random_joke()
     {
         $randomJoke = 'Random Joke';
 
         $jokes = new JokeFactory([
-            $randomJoke
+            $randomJoke,
         ]);
 
         $joke = $jokes->getRandomJoke();
@@ -36,10 +34,9 @@ class JokeFactoryTest extends TestCase
         $joke = $jokes->getRandomJoke();
 
         $this->assertContains($joke, [
-            "Joke 1",
-            "Joke 2",
-            "Joke 3"
+            'Joke 1',
+            'Joke 2',
+            'Joke 3',
         ]);
     }
-
 }
